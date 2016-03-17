@@ -28,6 +28,7 @@ define([
 			this.input = this.$("#new-mood"); // the textbox for new todos
 
 			this.listenTo(this.collection, 'add', this.addOne);
+
 		},
 
 		addOne: function(mood) {
@@ -40,7 +41,7 @@ define([
 			// create a new location in firebase and save the model data
 			// this will trigger the listenTo method above and a new todo view
 			// will be created as well
-			this.collection.create({text: this.input.val()});
+			this.collection.create({text: this.input.val(), dateAdded: new Date().getTime()});
 			this.input.val('');
 		}
 	});

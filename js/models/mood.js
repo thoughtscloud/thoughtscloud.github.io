@@ -9,7 +9,8 @@ define([
 		// Default attributes for the mood
 		// and ensure that each mood created has a date and text
 		defaults: {
-			text: ''
+			text: '',
+			dateAdded: new Date().getTime()
 		},
 
 		/*// Toggle the `completed` state of this todo item.

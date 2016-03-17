@@ -2,10 +2,9 @@
 define([
 	'jquery',
 	'backbone',
-	'collections/todos',
 	'collections/moods',
 	'common'
-], function ($, Backbone, Todos, moods, Common) {
+], function ($, Backbone, moods, Common) {
 	'use strict';
 
 	var AppRouter = Backbone.Router.extend({

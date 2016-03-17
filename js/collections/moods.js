@@ -18,5 +18,6 @@ define([
 
 	});
 
+
 	return new MoodsCollection();
 });
