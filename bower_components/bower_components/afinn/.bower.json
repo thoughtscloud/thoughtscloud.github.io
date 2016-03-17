@@ -1,0 +1,14 @@
+{
+  "name": "afinn",
+  "homepage": "https://github.com/darenr/afinn",
+  "_release": "920c85d74f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "920c85d74ffaa5adf1c4c9b9dea77d77efd34a05"
+  },
+  "_source": "https://github.com/darenr/afinn.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/darenr/afinn.git",
+  "_direct": true
+}
