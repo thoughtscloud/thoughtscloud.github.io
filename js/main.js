@@ -31,12 +31,18 @@ require([
 	'backbone',
 	'views/app',
 	'routers/router',
-	'collections/moods'
-], function (Backbone, AppView, Workspace, MoodsCollection) {
+	'collections/moods',
+    'jquery'
+], function (Backbone, AppView, Workspace, MoodsCollection, $) {
 	/*jshint nonew:false*/
 	// Initialize routing and start Backbone.history()
 	new Workspace();
 	Backbone.history.start();
-	// Initialize the application view
-	new AppView({ collection: MoodsCollection });
+
+    $.getJSON('js/afinn.json', function(data){
+
+        // Initialize the application view
+        new AppView({ collection: MoodsCollection, json : data});
+    });
+
 });

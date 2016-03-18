@@ -4,20 +4,23 @@
 		<meta charset="utf-8">
 		<title>Backbone.js + Firebase • TodoMVC</title>
 		<style>
-			#moods-list {
+			/*#moods-list {
 				transform: rotate(180deg);
 			}
 			#moods-list > li {
 				transform: rotate(-180deg);
-			}
+			}*/
 		</style>
 	</head>
 	<body>
 		<section id="moodapp">
 			<input type="text" id="new-mood" placeholder="New mood" />
 			<button id="add-mood" type="button">Add</button>
-			<ul id="moods-list">
-			</ul>
+			Sort by <button id="sort-date" type="button">Date Added</button>
+			<div id="mood-wraper">
+				<ul id="moods-list">
+				</ul>
+			</div>
 		</section>
 		<script data-main="js/main" src="bower_components/requirejs/require.js"></script>
 		<script src="https://rawgit.com/addyosmani/timing.js/master/timing.js"></script>

@@ -15,6 +15,12 @@ define([
 		initialize: function() {
 			this.listenTo(this.model, "change", this.render);
 		},
+
+        remove: function() {
+            this.model.off('change', this.render);
+            this.$el.remove();
+        },
+
 		render: function() {
 
 			var dateNew = new Date(this.model.attributes.dateAdded);
