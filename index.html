@@ -1,28 +1,79 @@
 <!doctype html>
 <html lang="en" data-framework="backbonejs">
-	<head>
-		<meta charset="utf-8">
-		<title>Backbone.js + Firebase • TodoMVC</title>
-		<style>
-			/*#moods-list {
-				transform: rotate(180deg);
-			}
-			#moods-list > li {
-				transform: rotate(-180deg);
-			}*/
-		</style>
-	</head>
-	<body>
-		<section id="moodapp">
-			<input type="text" id="new-mood" placeholder="New mood" />
-			<button id="add-mood" type="button">Add</button>
-			Sort by <button id="sort-date" type="button">Date Added</button>
-			<div id="mood-wraper">
-				<ul id="moods-list">
-				</ul>
-			</div>
-		</section>
-		<script data-main="js/main" src="bower_components/requirejs/require.js"></script>
-		<script src="https://rawgit.com/addyosmani/timing.js/master/timing.js"></script>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <title>How are you feeling today?</title>
+    <style>
+        .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+        .clearfix { display: inline-block; }
+        /* start commented backslash hack \*/
+        * html .clearfix { height: 1%; }
+        .clearfix { display: block; }
+        /* close commented backslash hack */
+
+        body{
+            width: 99.45%;
+            height: 100%;
+
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        ul li {
+            padding: 500px 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -9999;
+            text-align: right;
+            position: relative;
+        }
+
+        #mood-wraper {
+            margin: -10px 0 0 -50px;
+        }
+        .inner-li{
+            padding: 30px;
+            float: right;
+            width: 50%;
+        }
+
+        #mood-desc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 90%;
+            width: 40%;
+            padding: 20px;
+            margin: 0;
+            float: left;
+            position: fixed;
+        }
+
+    </style>
+</head>
+<body>
+<section id="moodapp">
+    <div id="mood-desc">
+        <input type="text" id="new-mood" placeholder="New mood"/>
+        <button id="add-mood" type="button">Add</button>
+        <button id="sort-date" type="button">Sort by Date</button>
+    </div>
+    <div id="mood-wraper">
+        <ul id="moods-list">
+        </ul>
+    </div>
+</section>
+<script data-main="js/main" src="bower_components/requirejs/require.js"></script>
+<script src="https://rawgit.com/addyosmani/timing.js/master/timing.js"></script>
+</body>
 </html>

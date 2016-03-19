@@ -22,8 +22,6 @@ define([
 
 			this.listenTo(options.collection, 'add', this.addOne);
 			this.json = options.json;
-
-			this.sortByFlag = false;
 		},
 
 		addOne: function(mood) {
@@ -46,12 +44,20 @@ define([
 				var weight = sum / wordsUsed.length;
 			}
 
+			var dateNew = new Date();
 			this.collection.create({
 									text: this.input.val(),
-									dateAdded: new Date().getTime(),
+									dateAdded: dateNew.getTime(),
 									weight : weight,
 									words : wordsUsed
 									});
+
+			console.log("Date: " + (dateNew.getMonth() + 1) + "/" + dateNew.getDate() + "/" + dateNew.getFullYear()
+				+ " " + dateNew.getHours() + ":" + + dateNew.getMinutes() +
+				"\nText: " +  this.input.val() +
+				"\nWords used: " + JSON.stringify(wordsUsed) +
+				"\nWeight Average: " + weight);
+
 			this.input.val('');
 		},
 		sortByDate: function() {
@@ -61,16 +67,14 @@ define([
 				list.prepend(li)
 			});
 
-			this.list.parent().html("\<div id='mood-wraper'>\<ul id='moods-list'>" + list.html() + "\</ul></div>");
+			this.list.parent().html("\<ul id='moods-list'>" + list.html() + "\</ul>");
 			this.list = this.$('#moods-list');
 		}
 	});
 
 	var wordsHandler = function (json, text) {
 		var noCommas = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
-		console.log(noCommas);
 		var res = noCommas.split(" ");
-		console.log(res);
 		var wordsUsed = [];
 
 		for (var i = 0; i <= res.length; i++) {
