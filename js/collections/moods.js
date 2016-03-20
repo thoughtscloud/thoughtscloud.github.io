@@ -10,8 +10,7 @@ define([
 	// This collection adds moods into the Firebase database
 	var MoodsCollection = Backbone.Firebase.Collection.extend({
 		model: mood,
-		url: 'https://blistering-fire-6138.firebaseio.com/'
+		url: 'https://thoughtscloud.firebaseio.com'
 	});
-
 	return new MoodsCollection();
 });

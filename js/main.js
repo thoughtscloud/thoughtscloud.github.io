@@ -28,11 +28,11 @@ require([
 	'views/app',
 	'routers/router',
 	'collections/moods',
-    'jquery'
+    'jquery',
+    'Firebase'
 ], function (Backbone, AppView, Workspace, MoodsCollection, $) {
 	new Workspace();
 	Backbone.history.start();
-
     // Import the dictionary of feelings from the afinn.json
     $.getJSON('js/afinn.json', function(data){
         // Initialize the application view
