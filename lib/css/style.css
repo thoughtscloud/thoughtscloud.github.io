@@ -1,0 +1,78 @@
+/* --------------------------------------------------------
+Style Sheet for Mood Project
+
+version: 1.0.0
+last modified: 03.19.2016 by jackiecard
+                          author: jackiecard
+email: jacquecard@gmail.com
+website: http://jackiecard.github.io
+----------------------------------------------------------*/
+
+#mood-list-wraper {
+    margin: 0 -22px 0 -12px;
+    text-align: right;
+}
+
+#mood-menu {
+    margin: 0;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    -webkit-box-shadow: -2px 8px 6px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: -2px 8px 6px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 8px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    font-family: 'Judson', serif;
+    color: #333;
+    font-size: 24px;
+}
+
+ul li {
+    padding: 300px 20px;
+    margin: 0;
+}
+
+.inner-li i {
+    font-size: 14px;
+}
+
+#logo {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#title {
+    font-size: 24px;
+    text-align: center;
+    color: #7c7c7c;
+    margin: 0 10px 10px 10px;
+}
+
+#new-mood {
+    min-height: 150px;
+    border-top: 1px solid #ccc;
+}
+
+#actions {
+    text-align: right;
+}
+
+#guide {
+    text-align: right;
+    font-size: 12px;
+}
+
+footer {
+    color: #7c7c7c;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    padding: 10px;
+    line-height: 36px;
+}

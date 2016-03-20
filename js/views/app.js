@@ -1,4 +1,3 @@
-/*global define*/
 define([
 	'jquery',
 	'underscore',
@@ -8,9 +7,7 @@ define([
 	'use strict';
 
 	var AppView = Backbone.View.extend({
-
 		el: '#moodapp',
-
 		events: {
 			"click #add-mood" : "createMood",
 			"click #sort-date" : "sortByDate",
@@ -72,6 +69,8 @@ define([
 		}
 	});
 
+	// Compares the user's text with the feelings dictionary
+	// Returns a list of matched words and it's weight
 	var wordsHandler = function (json, text) {
 		var noCommas = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
 		var res = noCommas.split(" ");
@@ -85,5 +84,6 @@ define([
 		}
 		return wordsUsed;
 	}
+
 	return AppView;
 });

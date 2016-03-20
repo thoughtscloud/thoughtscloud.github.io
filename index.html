@@ -2,78 +2,46 @@
 <html lang="en" data-framework="backbonejs">
 <head>
     <meta charset="utf-8">
-    <title>How are you feeling today?</title>
-    <style>
-        .clearfix:after {
-            visibility: hidden;
-            display: block;
-            font-size: 0;
-            content: " ";
-            clear: both;
-            height: 0;
-        }
-        .clearfix { display: inline-block; }
-        /* start commented backslash hack \*/
-        * html .clearfix { height: 1%; }
-        .clearfix { display: block; }
-        /* close commented backslash hack */
-
-        body{
-            width: 99.45%;
-            height: 100%;
-
-        }
-        ul {
-            list-style: none;
-            margin: 0;
-        }
-
-        ul li {
-            padding: 500px 0;
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -9999;
-            text-align: right;
-            position: relative;
-        }
-
-        #mood-wraper {
-            margin: -10px 0 0 -50px;
-        }
-        .inner-li{
-            padding: 30px;
-            float: right;
-            width: 50%;
-        }
-
-        #mood-desc {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 90%;
-            width: 40%;
-            padding: 20px;
-            margin: 0;
-            float: left;
-            position: fixed;
-        }
-
-    </style>
+    <title>Share your thoughts with the cloud</title>
+    <link rel="stylesheet" href="lib/css/materialize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Judson' rel='stylesheet' type='text/css'>
+    <link href='lib/css/style.css' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="lib/images/favicon.ico">
 </head>
 <body>
 <section id="moodapp">
-    <div id="mood-desc">
-        <input type="text" id="new-mood" placeholder="New mood"/>
-        <button id="add-mood" type="button">Add</button>
-        <button id="sort-date" type="button">Sort by Date</button>
-    </div>
-    <div id="mood-wraper">
-        <ul id="moods-list">
-        </ul>
+    <div class="row">
+        <div class="col s8">
+            <div id="mood-list-wraper">
+                <ul id="moods-list">
+                </ul>
+            </div>
+        </div>
+        <div class="col s4">
+            <div id="mood-menu">
+                <img src="lib/images/cloud.png" id="logo"><br>
+                <div id="title">Share your thoughts with me</div>
+                <p>
+                    Post your thoughts and let me compute how your mood is, either full of positivity if in bright
+                    beautiful colors or negative if in gray shades.
+                </p>
+                <textarea type="text" id="new-mood" placeholder="how your feeling today?" class="materialize-textarea" name="new-mood"></textarea>
+                <div id="actions">
+                    <button id="add-mood" class="waves-effect waves-light btn" type="button" name="AddThoughtButton">Add
+                    </button>
+                    <button id="sort-date" class="waves-effect waves-light btn" type="button" name="SortByDate">Sort by
+                        Date
+                    </button>
+                </div>
+                <footer>
+                    Developed by <a href="https://github.com/jackiecard" target="_blank">jackiecard</a>
+                </footer>
+            </div>
+        </div>
     </div>
 </section>
 <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
-<script src="https://rawgit.com/addyosmani/timing.js/master/timing.js"></script>
+<script src="lib/js/materialize.min.js"></script>
+
 </body>
 </html>

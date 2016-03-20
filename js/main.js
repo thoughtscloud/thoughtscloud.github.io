@@ -1,10 +1,6 @@
-/*global require*/
 'use strict';
 
-// Require.js allows us to configure shortcut alias
 require.config({
-	// The shim config allows us to configure dependencies for
-	// scripts that do not call define() to register a module
 	shim: {
 		underscore: {
 			exports: '_'
@@ -34,13 +30,11 @@ require([
 	'collections/moods',
     'jquery'
 ], function (Backbone, AppView, Workspace, MoodsCollection, $) {
-	/*jshint nonew:false*/
-	// Initialize routing and start Backbone.history()
 	new Workspace();
 	Backbone.history.start();
 
+    // Import the dictionary of feelings from the afinn.json
     $.getJSON('js/afinn.json', function(data){
-
         // Initialize the application view
         new AppView({ collection: MoodsCollection, json : data});
     });
