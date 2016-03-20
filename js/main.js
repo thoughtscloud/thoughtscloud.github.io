@@ -28,8 +28,7 @@ require([
 	'views/app',
 	'routers/router',
 	'collections/moods',
-    'jquery',
-    'Firebase'
+    'jquery'
 ], function (Backbone, AppView, Workspace, MoodsCollection, $) {
 	new Workspace();
 	Backbone.history.start();
